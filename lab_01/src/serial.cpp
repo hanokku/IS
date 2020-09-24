@@ -7,8 +7,8 @@ using namespace std;
 int write_serial()
 {
     int res;
-    system("system_profiler SPHardwareDataType | grep 'Serial Number (system)' | awk '{print $4}' > license.key");
-    
+    res = system("system_profiler SPHardwareDataType | grep 'Serial Number (system)' | awk '{print $4}' > license.key");
+
     if (res == 0) {
         return SUCCESS;
     } else {
